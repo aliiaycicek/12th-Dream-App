@@ -8,25 +8,26 @@
     android:background="@color/fb_lacivert">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/fb_logo"
-        android:layout_marginBottom="32dp"/>
+        android:layout_width="120dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/fb_logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fenerbahçe'ye Hoş Geldin"
+        android:text="Yeni Taraftar Kaydı"
         android:textColor="@color/yellow"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="32dp"/>
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-posta"
+        android:hint="Ad Soyad"
+        android:maxLength="50"
         android:textColorHint="@color/yellow"
         android:textColor="@color/white"
         android:padding="16dp"
@@ -34,10 +35,37 @@
         android:layout_marginBottom="16dp"/>
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-posta"
+        android:maxLength="100"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/yellow"
+        android:textColor="@color/white"
+        android:padding="16dp"
+        android:background="@drawable/input_background"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Şifre"
+        android:maxLength="20"
+        android:textColorHint="@color/yellow"
+        android:textColor="@color/white"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:background="@drawable/input_background"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Şifreyi Tekrar Girin"
+        android:maxLength="20"
         android:textColorHint="@color/yellow"
         android:textColor="@color/white"
         android:inputType="textPassword"
@@ -46,23 +74,29 @@
         android:layout_marginBottom="24dp"/>
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Giriş Yap"
+        android:text="Kayıt Ol"
         android:textColor="@color/white"
         android:background="@drawable/button_background"
         android:padding="16dp"
         android:layout_marginBottom="16dp"/>
 
     <TextView
-        android:id="@+id/textViewRegister"
+        android:id="@+id/textViewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hesabın yok mu? Kayıt ol"
+        android:text="Zaten hesabın var mı? Giriş yap"
         android:textColor="@color/yellow"
         android:padding="8dp"/>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/yellow"
+        android:layout_marginTop="16dp"/>
+
 </LinearLayout>
-
-

@@ -1,53 +1,100 @@
 package com.example.a12thdreamapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText emailEditText, passwordEditText;
     private Button loginButton;
-    private DatabaseHelper databaseHelper;
+    private TextView textViewRegister;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        databaseHelper = new DatabaseHelper(this);
+        // Firebase Auth instance'ını başlat
+        mAuth = FirebaseAuth.getInstance();
 
-        // Test kullanıcısı ekleme
-        boolean isAdded = databaseHelper.addUser("test@test.com", "123456");
-        if(isAdded) {
-            Toast.makeText(this, "Test kullanıcısı eklendi!", Toast.LENGTH_SHORT).show();
-        }
-
+        // View elemanlarını bağlama
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
+        textViewRegister = findViewById(R.id.textViewRegister);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = emailEditText.getText().toString().trim();
-                String password = passwordEditText.getText().toString().trim();
+        // Login butonu click listener
+        loginButton.setOnClickListener(v -> loginUser());
 
-                if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Lütfen tüm alanları doldurun", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+        // Register text click listener
+        textViewRegister.setOnClickListener(v -> startRegisterActivity());
+    }
 
-                if (databaseHelper.checkUser(email, password)) {
-                    Toast.makeText(LoginActivity.this, "Giriş başarılı!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(LoginActivity.this, "Email veya şifre yanlış!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Kullanıcı zaten giriş yapmış mı kontrol et
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            startMenuActivity();
+        }
+    }
+
+    private void loginUser() {
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Email ve şifre boş olamaz", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Firebase ile giriş işlemi
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Kullanıcı bilgilerini SharedPreferences'a kaydet
+                        saveUserLoginState();
+                        // MenuActivity'ye yönlendir
+                        startMenuActivity();
+                    } else {
+                        // Giriş başarısız
+                        Toast.makeText(LoginActivity.this,
+                                "Giriş başarısız: " + task.getException().getMessage(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void saveUserLoginState() {
+        SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            editor.putString("userEmail", user.getEmail());
+            editor.putString("userId", user.getUid());
+            editor.putBoolean("isLoggedIn", true);
+            editor.apply();
+        }
+    }
+
+    private void startMenuActivity() {
+        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    private void startRegisterActivity() {
+        Intent intent = new Intent(LoginActivity.this, Register.class);
+        startActivity(intent);
     }
 }
-
-

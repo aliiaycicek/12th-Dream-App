@@ -1,19 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
+    <!-- Üst Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/top_bar_gradient"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Teknik Direktör Butonu -->
+        <LinearLayout
+            android:id="@+id/coachButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:background="@drawable/white_rounded_button"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_plus_blue"
+                android:contentDescription="@string/add_icon"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/teknik_direktor"
+                android:textColor="@color/fb_blue"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Fenerbahçe Logo -->
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/fb_logo"
+            android:contentDescription="@string/fb_logo"
+            android:importantForAccessibility="no" />
+
+        <!-- Hoşgeldiniz Mesajı -->
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <!-- Çıkış Butonu -->
+        <ImageButton
+            android:id="@+id/buttonLogout"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="end"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_logout"
+            android:contentDescription="@string/logout" />
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playerRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:visibility="gone" />
+
+    <!-- Saha Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar">
+
+        <!-- Saha background'u en altta olmalı -->
+        <ImageView
+            android:id="@+id/saha_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/futbol_sahasi"
+            android:contentDescription="@string/saha_background"
+            android:importantForAccessibility="no" />
+
+        <!-- Kaleci -->
+        <ImageButton
+            android:id="@+id/goalkeeper"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/kaleci"
+            android:padding="8dp"
+            android:scaleType="fitCenter" />
+
+        <!-- Defans Hattı (4 defans) -->
+        <ImageButton
+            android:id="@+id/left_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/sol_bek" />
+
+        <ImageButton
+            android:id="@+id/center_back_left"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_marginStart="120dp"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/sol_stoper" />
+
+        <ImageButton
+            android:id="@+id/center_back_right"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/sag_stoper" />
+
+        <ImageButton
+            android:id="@+id/right_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/sag_bek" />
+
+        <!-- Orta Saha Diamond -->
+        <ImageButton
+            android:id="@+id/defensive_midfielder"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="200dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/defansif_orta_saha" />
+
+        <ImageButton
+            android:id="@+id/left_midfielder"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="280dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/sol_orta_saha" />
+
+        <ImageButton
+            android:id="@+id/right_midfielder"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="280dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/sag_orta_saha" />
+
+        <ImageButton
+            android:id="@+id/attacking_midfielder"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="360dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/ofansif_orta_saha" />
+
+        <!-- Forvetler -->
+        <ImageButton
+            android:id="@+id/striker_left"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_marginStart="120dp"
+            android:layout_marginBottom="420dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/sol_forvet" />
+
+        <ImageButton
+            android:id="@+id/striker_right"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@id/goalkeeper"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="420dp"
+            android:background="@drawable/player_button_background"
+            android:contentDescription="@string/sag_forvet" />
+
+    </RelativeLayout>
+
+    <!-- Oyuncu Ekleme Butonu -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPlayerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_player"
+        app:backgroundTint="@color/fb_blue"
+        android:contentDescription="@string/add_player" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

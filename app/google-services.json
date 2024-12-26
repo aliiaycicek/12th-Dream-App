@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "898443863810",
+    "project_id": "th-dream-app",
+    "storage_bucket": "th-dream-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898443863810:android:690ab2bb02edbcf017841b",
+        "android_client_info": {
+          "package_name": "com.example.a12thdreamapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnLOKgPb-CWjDysNqUpNcxy6ozOiPNDms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">12th Dream App</string>
+    <string name="add_icon">Ekle</string>
+    <string name="teknik_direktor">Teknik Direktör</string>
+    <string name="fb_logo">Fenerbahçe Logo</string>
+    <string name="saha_background">Futbol Sahası</string>
+    <string name="kaleci">Kaleci</string>
+    <string name="sol_bek">Sol Bek</string>
+    <string name="sag_bek">Sağ Bek</string>
+    <string name="sol_stoper">Sol Stoper</string>
+    <string name="sag_stoper">Sağ Stoper</string>
+    <string name="sol_orta_saha">Sol Orta Saha</string>
+    <string name="sag_orta_saha">Sağ Orta Saha</string>
+    <string name="sol_merkez_orta_saha">Sol Merkez Orta Saha</string>
+    <string name="sag_merkez_orta_saha">Sağ Merkez Orta Saha</string>
+    <string name="forvet">Forvet</string>
+    <string name="add_player">Oyuncu Ekle</string>
+    <string name="logout">Çıkış Yap</string>
+    <string name="defansif_orta_saha">Defansif Orta Saha</string>
+    <string name="ofansif_orta_saha">Ofansif Orta Saha</string>
+    <string name="sol_forvet">Sol Forvet</string>
+    <string name="sag_forvet">Sağ Forvet</string>
+    <string name="favorite">Favori</string>
+    <string name="welcome_message">Hoş geldiniz</string>
 </resources>
