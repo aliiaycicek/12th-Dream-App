@@ -1,19 +1,16 @@
 package com.example.a12thdreamapp;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Team {
+public class Coach {
     private String id;
     private String name;
-    private List<Player> players;
+    private boolean isFenerbahceCoach;
 
     // Firebase için boş constructor
-    public Team() {}
+    public Coach() {}
 
-    public Team(String name) {
+    public Coach(String name, boolean isFenerbahceCoach) {
         this.name = name;
-        this.players = new ArrayList<>();
+        this.isFenerbahceCoach = isFenerbahceCoach;
     }
 
     public String getId() {
@@ -32,11 +29,11 @@ public class Team {
         this.name = name;
     }
 
-    public List<Player> getPlayers() {
-        return players;
+    public boolean isFenerbahceCoach() {
+        return isFenerbahceCoach;
     }
 
-    public void setPlayers(List<Player> players) {
-        this.players = players;
+    public void setFenerbahceCoach(boolean fenerbahceCoach) {
+        isFenerbahceCoach = fenerbahceCoach;
     }
-}
+} 

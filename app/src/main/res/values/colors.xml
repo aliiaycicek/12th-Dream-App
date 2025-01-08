@@ -8,7 +8,7 @@
     <!-- Football Dream App Renkleri -->
     <color name="fb_navy">#041E42</color>
     <color name="fb_dark_blue">#000C1B</color>
-    <color name="fb_blue">#041E42</color>
+    <color name="fb_blue">#2D5CA6</color>
     <color name="fb_lacivert">#041E42</color>  <!-- Eksik olan renk eklendi -->
 
     <!-- Material Design Renkleri -->
@@ -20,6 +20,16 @@
 
     <!-- Ek Önerilen Renkler -->
     <color name="fb_light_blue">#1877F2</color>
-    <color name="fb_accent">#FFD700</color>    <!-- Altın sarısı aksent renk -->
+    <color name="fb_accent">#FFFFFF</color>    <!-- Altın sarısı aksent renk -->
     <color name="fb_gray">#E0E0E0</color>      <!-- Arayüz elementleri için gri -->
+
+    <color name="legend_color">#FFD700</color>  <!-- Altın/Sarı -->
+    <color name="modern_color">#1E90FF</color>  <!-- Mavi -->
+    <color name="current_color">#C0C0C0</color> <!-- Gümüş -->
+    <color name="custom_color">#808080</color>  <!-- Gri -->
+
+    <!-- Oyuncu kategorileri için renkler -->
+    <color name="player_legend">#FEE123</color>  <!-- Sarı -->
+    <color name="player_modern">#808080</color>   <!-- Gri -->
+    <color name="player_current">#2D5CA6</color>  <!-- Mavi -->
 </resources>

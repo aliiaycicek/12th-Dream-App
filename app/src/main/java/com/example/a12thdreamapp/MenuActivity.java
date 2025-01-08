@@ -1,4 +1,3 @@
-
 package com.example.a12thdreamapp;
 
 import androidx.annotation.NonNull;
@@ -22,6 +21,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class MenuActivity extends AppCompatActivity {
 
     private static final String TAG = "MenuActivity";
@@ -36,15 +38,32 @@ public class MenuActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference usersRef;
 
+    private TeamAdapter teamAdapter;
+
+    private String currentUserId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        // Firebase Auth'dan kullanıcı ID'sini al
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            currentUserId = currentUser.getUid();
+        }
+
         initializeFirebase();
         initializeViews();
         setupUserInfo();
         setupClickListeners();
+
+        // TeamAdapter'ı başlat
+        teamAdapter = new TeamAdapter();
+        teamAdapter.setOnTeamClickListener(team -> {
+            // Takıma tıklandığında yapılacak işlemler
+        });
+        loadTeams(); // Takımları yükle
     }
 
     private void initializeFirebase() {
@@ -135,6 +154,23 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(new Intent(MenuActivity.this, MainActivity.class));
             }
         });
+
+        // Add Player butonu
+        findViewById(R.id.addPlayerButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, AddPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Favori Kadrolar butonu için tıklama olayı
+        findViewById(R.id.favoriteTeamsButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuActivity.this, FavoriteTeamsActivity.class));
+            }
+        });
     }
 
     private void logoutUser() {
@@ -173,5 +209,22 @@ public class MenuActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         setupUserInfo(); // Kullanıcı bilgilerini yenile
+    }
+
+    private void loadTeams() {
+        FirebaseManager.getFavoriteTeams(currentUserId, new FirebaseManager.OnFavoriteTeamsLoadedListener() {
+            @Override
+            public void onTeamsLoaded(List<FavoriteTeam> teams) {
+                if (teamAdapter != null) {
+                    teamAdapter.setTeams(teams);
+                }
+            }
+
+            @Override
+            public void onError(String error) {
+                Toast.makeText(MenuActivity.this, 
+                    "Takımlar yüklenirken hata oluştu: " + error, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

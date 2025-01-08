@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "898443863810",
+    "firebase_url": "https://th-dream-app-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "th-dream-app",
     "storage_bucket": "th-dream-app.firebasestorage.app"
   },

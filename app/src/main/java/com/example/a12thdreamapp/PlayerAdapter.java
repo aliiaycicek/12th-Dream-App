@@ -1,23 +1,36 @@
 package com.example.a12thdreamapp;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder> {
     private List<Player> players;
+    private OnPlayerClickListener listener;
 
-    public PlayerAdapter(List<Player> players) {
-        this.players = players;
+    public interface OnPlayerClickListener {
+        void onPlayerClick(Player player);
     }
 
-    @NonNull
+    public PlayerAdapter(List<Player> players, OnPlayerClickListener listener) {
+        this.players = players;
+        this.listener = listener;
+    }
+
+    public void updatePlayers(List<Player> newPlayers) {
+        this.players = newPlayers;
+        notifyDataSetChanged();
+    }
+
     @Override
-    public PlayerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PlayerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_player, parent, false);
         return new PlayerViewHolder(view);
@@ -26,7 +39,15 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
     @Override
     public void onBindViewHolder(@NonNull PlayerViewHolder holder, int position) {
         Player player = players.get(position);
-        holder.bind(player);
+        holder.playerNameTextView.setText(player.getName());
+        holder.playerPositionTextView.setText(player.getPosition());
+
+        // Legend oyuncular için sarı arka plan
+        if (player.getCategory() == Player.PlayerCategory.LEGEND) {
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#FFEB3B"));
+        } else {
+            holder.cardView.setCardBackgroundColor(Color.WHITE);
+        }
     }
 
     @Override
@@ -35,18 +56,15 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
     }
 
     static class PlayerViewHolder extends RecyclerView.ViewHolder {
-        private TextView playerName;
-        private TextView playerPosition;
+        TextView playerNameTextView;
+        TextView playerPositionTextView;
+        CardView cardView;
 
-        public PlayerViewHolder(@NonNull View itemView) {
+        PlayerViewHolder(View itemView) {
             super(itemView);
-            playerName = itemView.findViewById(R.id.playerName);
-            playerPosition = itemView.findViewById(R.id.playerPosition);
-        }
-
-        public void bind(Player player) {
-            playerName.setText(player.getName());
-            playerPosition.setText(player.getPosition());
+            playerNameTextView = itemView.findViewById(R.id.playerNameTextView);
+            playerPositionTextView = itemView.findViewById(R.id.playerPositionTextView);
+            cardView = itemView.findViewById(R.id.playerCardView);
         }
     }
 }

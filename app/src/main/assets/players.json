@@ -1,0 +1,188 @@
+{
+  "legends": [
+    {
+      "name": "Alex De Souza",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Aykut Kocaman",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Rıdvan Dilmen",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Tuncay Şanlı",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Rüştü Reçber",
+      "position": "Kaleci",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Uche Okechukwu",
+      "position": "Defans",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Harald Schumacher",
+      "position": "Kaleci",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Oğuz Çetin",
+      "position": "Defans",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Elvir Baljic",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Kennet Andersson",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    }
+  ],
+  "modern": [
+    {
+      "name": "Moussa Sow",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Dirk Kuyt",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Robin van Persie",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Simon Kjær",
+      "position": "Defans",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Volkan Demirel",
+      "position": "Kaleci",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Diego Lugano",
+      "position": "Defans",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Stephen Appiah",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Nicolas Anelka",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Pierre van Hooijdonk",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Mehmet Aurelio",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Roberto Carlos",
+      "position": "Defans",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Martin Skrtel",
+      "position": "Defans",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Nani",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Raul Meireles",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    }
+  ],
+  "current": [
+    {
+      "name": "Edin Dzeko",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Sebastian Szymanski",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Dusan Tadic",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Dominik Livakovic",
+      "position": "Kaleci",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "İrfan Can Kahveci",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Ferdi Kadıoğlu",
+      "position": "Defans",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Bright Osayi-Samuel",
+      "position": "Defans",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Fred",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Cengiz Ünder",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "İsmail Yüksek",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Mert Hakan Yandaş",
+      "position": "Orta Saha",
+      "isFenerbahcePlayer": true
+    },
+    {
+      "name": "Michy Batshuayi",
+      "position": "Forvet",
+      "isFenerbahcePlayer": true
+    }
+  ]
+} 

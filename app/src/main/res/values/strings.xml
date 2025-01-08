@@ -23,4 +23,16 @@
     <string name="sag_forvet">Sağ Forvet</string>
     <string name="favorite">Favori</string>
     <string name="welcome_message">Hoş geldiniz</string>
+    <string-array name="positions">
+        <item>Kaleci</item>
+        <item>Defans</item>
+        <item>Orta Saha</item>
+        <item>Forvet</item>
+    </string-array>
+    <string-array name="categories">
+        <item>Efsane</item>
+        <item>Modern</item>
+        <item>Mevcut</item>
+        <item>Özel</item>
+    </string-array>
 </resources>
