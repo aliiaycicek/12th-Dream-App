@@ -110,7 +110,7 @@ public class FirebaseManager {
         }
     }
 
-    // Coach metodları
+
     public static void addCoach(Coach coach, OnCoachAddedListener listener) {
         getInstance().addCoachInternal(coach, listener);
     }
@@ -125,7 +125,7 @@ public class FirebaseManager {
         }
     }
 
-    // Interface tanımlamaları
+
     public interface OnPlayerAddedListener {
         void onPlayerAdded();
         void onError(String error);

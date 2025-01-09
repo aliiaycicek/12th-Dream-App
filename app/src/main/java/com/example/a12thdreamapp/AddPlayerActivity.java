@@ -34,30 +34,30 @@ public class AddPlayerActivity extends AppCompatActivity {
         addButton = findViewById(R.id.addPlayerButton);
         recyclerView = findViewById(R.id.playersRecyclerView);
 
-        // RecyclerView ve adapter'ı ayarla
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new PlayerAdapter(new ArrayList<>(), player -> {
-            // Oyuncu tıklama işlemleri
+
         });
         recyclerView.setAdapter(adapter);
 
-        // Spinner'ları ayarla
+
         setupSpinners();
 
         addButton.setOnClickListener(v -> addPlayer());
         
-        // Oyuncuları yükle
+
         loadPlayers();
     }
 
     private void setupSpinners() {
-        // Pozisyon Spinner'ı
+
         ArrayAdapter<CharSequence> positionAdapter = ArrayAdapter.createFromResource(this,
                 R.array.positions, android.R.layout.simple_spinner_item);
         positionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         positionSpinner.setAdapter(positionAdapter);
 
-        // Kategori Spinner'ı
+
         ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(this,
                 R.array.categories, android.R.layout.simple_spinner_item);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -74,7 +74,7 @@ public class AddPlayerActivity extends AppCompatActivity {
             return;
         }
 
-        // Kategoriyi enum'a çevir
+
         Player.PlayerCategory category;
         switch (categoryStr) {
             case "Efsane":
@@ -91,20 +91,20 @@ public class AddPlayerActivity extends AppCompatActivity {
                 break;
         }
 
-        // Yeni oyuncuyu oluştur
+
         Player newPlayer = new Player(name, position, true, category);
 
-        // Firebase'e kaydet
+
         FirebaseManager.addPlayer(newPlayer, new FirebaseManager.OnPlayerAddedListener() {
             @Override
             public void onPlayerAdded() {
                 Toast.makeText(AddPlayerActivity.this, 
                     "Oyuncu başarıyla eklendi", Toast.LENGTH_SHORT).show();
                 
-                // Oyuncu listesini güncelle
+
                 loadPlayers();
                 
-                // Input alanlarını temizle
+
                 nameInput.setText("");
                 positionSpinner.setSelection(0);
                 categorySpinner.setSelection(0);
@@ -122,7 +122,7 @@ public class AddPlayerActivity extends AppCompatActivity {
         FirebaseManager.getAllPlayers(new FirebaseManager.OnPlayersLoadedListener() {
             @Override
             public void onPlayersLoaded(List<Player> players) {
-                // Oyuncuları adapter'a set et
+
                 if (adapter != null) {
                     adapter.updatePlayers(players);
                 }

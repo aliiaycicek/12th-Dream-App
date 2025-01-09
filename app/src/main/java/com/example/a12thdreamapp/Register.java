@@ -119,7 +119,7 @@ public class Register extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser firebaseUser = mAuth.getCurrentUser();
 
-                            // Kullanıcı displayName'ini güncelle
+
                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                     .setDisplayName(name)
                                     .build();
@@ -129,7 +129,7 @@ public class Register extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                // Kullanıcı bilgilerini database'e kaydet
+
                                                 HashMap<String, Object> user = new HashMap<>();
                                                 user.put("name", name);
                                                 user.put("email", email);

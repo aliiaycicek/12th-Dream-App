@@ -6,7 +6,7 @@ import retrofit2.http.Query;
 import com.google.gson.JsonObject;
 
 public interface ApiService {
-    // Headers'ı kaldırıyoruz çünkü RetrofitClient'da ekliyoruz
+
     @GET("v3/players/squads")
     Call<JsonObject> getTeamPlayers(@Query("team") int teamId);
 

@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Menu Activity -->
+
         <activity
             android:name=".MenuActivity"
             android:exported="false"

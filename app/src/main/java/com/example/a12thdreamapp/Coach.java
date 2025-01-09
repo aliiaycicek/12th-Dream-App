@@ -5,7 +5,7 @@ public class Coach {
     private String name;
     private boolean isFenerbahceCoach;
 
-    // Firebase için boş constructor
+
     public Coach() {}
 
     public Coach(String name, boolean isFenerbahceCoach) {

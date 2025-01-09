@@ -31,15 +31,4 @@ public class RetrofitClient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
-
-    public static synchronized RetrofitClient getInstance() {
-        if (instance == null) {
-            instance = new RetrofitClient();
-        }
-        return instance;
-    }
-
-    public ApiService getApiService() {
-        return retrofit.create(ApiService.class);
-    }
 }

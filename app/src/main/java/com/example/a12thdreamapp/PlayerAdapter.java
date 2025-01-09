@@ -42,7 +42,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
         holder.playerNameTextView.setText(player.getName());
         holder.playerPositionTextView.setText(player.getPosition());
 
-        // Legend oyuncular için sarı arka plan
+
         if (player.getCategory() == Player.PlayerCategory.LEGEND) {
             holder.cardView.setCardBackgroundColor(Color.parseColor("#FFEB3B"));
         } else {

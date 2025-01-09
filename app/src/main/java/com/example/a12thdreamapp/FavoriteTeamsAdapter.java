@@ -49,11 +49,9 @@ public class FavoriteTeamsAdapter extends RecyclerView.Adapter<FavoriteTeamsAdap
         FavoriteTeam team = teams.get(position);
         holder.teamNameTextView.setText(team.getName());
         
-        // Dizilişi göster
         StringBuilder lineup = new StringBuilder();
         lineup.append("Formasyon: ").append(team.getFormation()).append("\n\n");
         
-        // Oyuncuları listele
         List<String> players = team.getPlayers();
         if (players != null && !players.isEmpty()) {
             lineup.append("Oyuncular:\n");
@@ -62,12 +60,10 @@ public class FavoriteTeamsAdapter extends RecyclerView.Adapter<FavoriteTeamsAdap
             }
         }
         
-        // Teknik direktörü göster
         lineup.append("\nTeknik Direktör: ").append(team.getCoach());
         
         holder.lineupTextView.setText(lineup.toString());
 
-        // Silme butonu işlevselliği
         holder.deleteButton.setOnClickListener(v -> {
             if (deleteListener != null) {
                 deleteListener.onTeamDelete(team);

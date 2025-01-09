@@ -15,7 +15,7 @@ public class SpacingItemDecoration extends RecyclerView.ItemDecoration {
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         outRect.bottom = spacing;
         
-        // İlk öğe için üst boşluk ekle
+
         if (parent.getChildAdapterPosition(view) == 0) {
             outRect.top = spacing;
         }

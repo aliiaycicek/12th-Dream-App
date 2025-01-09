@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fenerbahce_simge">
 
-    <!-- Üst Bar -->
+
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:orientation="horizontal"
         android:padding="8dp">
 
-        <!-- Fenerbahçe Logo -->
+
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -23,7 +23,7 @@
             android:src="@drawable/fb_logo"
             android:contentDescription="@string/fb_logo" />
 
-        <!-- Hoşgeldiniz Mesajı -->
+
         <TextView
             android:id="@+id/textViewWelcome"
             android:layout_width="256dp"
@@ -33,7 +33,7 @@
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
-        <!-- Çıkış Butonu -->
+
         <ImageButton
             android:id="@+id/buttonLogout"
             android:layout_width="48dp"
@@ -43,7 +43,7 @@
             android:contentDescription="@string/logout" />
     </LinearLayout>
 
-    <!-- Menü Kartları için ScrollView -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Dream Kadro Butonu -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/dreamKadroButton"
                 android:layout_width="match_parent"
@@ -91,7 +91,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Oyuncu Ekle Butonu -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/addPlayerButton"
                 android:layout_width="match_parent"
@@ -127,7 +127,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Favori Kadrolarım Butonu -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/favoriteTeamsButton"
                 android:layout_width="match_parent"

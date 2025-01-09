@@ -22,26 +22,24 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Firebase Auth instance'ını başlat
-        mAuth = FirebaseAuth.getInstance();
 
-        // View elemanlarını bağlama
+        mAuth = FirebaseAuth.getInstance();
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
         textViewRegister = findViewById(R.id.textViewRegister);
 
-        // Login butonu click listener
+
         loginButton.setOnClickListener(v -> loginUser());
 
-        // Register text click listener
+
         textViewRegister.setOnClickListener(v -> startRegisterActivity());
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        // Kullanıcı zaten giriş yapmış mı kontrol et
+
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             startMenuActivity();
@@ -57,16 +55,16 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // Firebase ile giriş işlemi
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        // Kullanıcı bilgilerini SharedPreferences'a kaydet
+
                         saveUserLoginState();
-                        // MenuActivity'ye yönlendir
+
                         startMenuActivity();
                     } else {
-                        // Giriş başarısız
+
                         Toast.makeText(LoginActivity.this,
                                 "Giriş başarısız: " + task.getException().getMessage(),
                                 Toast.LENGTH_SHORT).show();

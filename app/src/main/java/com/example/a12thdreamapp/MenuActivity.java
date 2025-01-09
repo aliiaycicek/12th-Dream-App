@@ -138,7 +138,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
-        // Çıkış butonu
+
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,7 +146,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        // Dream Kadro butonu
+
         dreamKadroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,7 +155,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        // Add Player butonu
+
         findViewById(R.id.addPlayerButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,7 +164,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        // Favori Kadrolar butonu için tıklama olayı
+
         findViewById(R.id.favoriteTeamsButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,7 +178,7 @@ public class MenuActivity extends AppCompatActivity {
             Log.d(TAG, "Kullanıcı çıkış yapıyor");
             mAuth.signOut();
 
-            // SharedPreferences temizle
+
             SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
             preferences.edit().clear().apply();
 
@@ -208,7 +208,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setupUserInfo(); // Kullanıcı bilgilerini yenile
+        setupUserInfo();
     }
 
     private void loadTeams() {

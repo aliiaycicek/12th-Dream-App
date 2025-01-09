@@ -2,7 +2,7 @@ package com.example.a12thdreamapp;
 
 import android.content.Context;
 import android.util.Log;
-import com.example.a12thdreamapp.Coach;
+
 
 public class DatabaseInitializer {
     private final Context context;
@@ -32,7 +32,7 @@ public class DatabaseInitializer {
         addPlayer("Edu Dracena", "Defans", true, Player.PlayerCategory.LEGEND);
         addPlayer("Gökhan Gönül", "Defans", true, Player.PlayerCategory.LEGEND);
         
-        // Orta Saha (tüm orta saha oyuncuları tek kategoride)
+        // Orta Saha
         addPlayer("Alex de Souza", "Orta Saha", true, Player.PlayerCategory.LEGEND);
         addPlayer("Emre Belözoğlu", "Orta Saha", true, Player.PlayerCategory.LEGEND);
         addPlayer("Mehmet Aurelio", "Orta Saha", true, Player.PlayerCategory.LEGEND);
@@ -125,7 +125,7 @@ public class DatabaseInitializer {
         addPlayer("Çağlar Söyüncü", "Defans", true, Player.PlayerCategory.MODERN);
         addPlayer("Bonucci", "Defans", true, Player.PlayerCategory.MODERN);
         
-        // Orta Saha (tekrarları kaldırdım)
+        // Orta Saha
         addPlayer("Mesut Özil", "Orta Saha", true, Player.PlayerCategory.MODERN);
         addPlayer("İrfan Can Kahveci", "Orta Saha", true, Player.PlayerCategory.MODERN);
         addPlayer("Mert Hakan Yandaş", "Orta Saha", true, Player.PlayerCategory.MODERN);
@@ -140,7 +140,7 @@ public class DatabaseInitializer {
         addPlayer("Bartuğ Elmaz", "Orta Saha", true, Player.PlayerCategory.MODERN);
         addPlayer("Krunic", "Orta Saha", true, Player.PlayerCategory.MODERN);
         
-        // Forvet (tekrarları kaldırdım)
+        // Forvet
         addPlayer("Edin Dzeko", "Forvet", true, Player.PlayerCategory.MODERN);
         addPlayer("Dusan Tadic", "Forvet", true, Player.PlayerCategory.MODERN);
         addPlayer("Sebastian Szymański", "Forvet", true, Player.PlayerCategory.MODERN);
@@ -186,12 +186,12 @@ public class DatabaseInitializer {
         FirebaseManager.addCoach(coach, new FirebaseManager.OnCoachAddedListener() {
             @Override
             public void onCoachAdded() {
-                // Başarılı
+
             }
 
             @Override
             public void onError(String error) {
-                // Hata durumu
+
             }
         });
     }

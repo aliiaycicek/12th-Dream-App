@@ -7,7 +7,7 @@ public class Player {
     private boolean isFenerbahcePlayer;
     private PlayerCategory category;
 
-    // Firebase için boş constructor gerekli
+
     public Player() {}
 
     public Player(String name, String position) {
@@ -44,29 +44,14 @@ public class Player {
         return position;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public boolean isFenerbahcePlayer() {
-        return isFenerbahcePlayer;
-    }
-
-    public void setFenerbahcePlayer(boolean fenerbahcePlayer) {
-        isFenerbahcePlayer = fenerbahcePlayer;
-    }
 
     public PlayerCategory getCategory() {
         return category;
     }
-
-    public void setCategory(PlayerCategory category) {
-        this.category = category;
-    }
-
+    
     public enum PlayerCategory {
-        LEGEND,    // Efsaneler
-        MODERN,    // 2010-2024
+        LEGEND,    // Efsane
+        MODERN,    // 2010-2024 arası
         CURRENT,   // Mevcut kadro
         CUSTOM     // Kullanıcı eklemeleri
     }

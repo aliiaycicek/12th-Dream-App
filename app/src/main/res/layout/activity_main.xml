@@ -3,21 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Futbol sahası arka plan resmi -->
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/futbol_sahasi"
         android:scaleType="centerCrop"/>
 
-    <!-- Oyuncu seçim butonları -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Forvet hattı -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -52,14 +52,14 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Orta saha hattı -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical">
             
-            <!-- Ofansif orta saha sırası -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -67,7 +67,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <!-- Sol Kanat -->
+
                 <Button
                     android:id="@+id/winger1"
                     style="@style/PlayerSelectionButton"
@@ -75,7 +75,7 @@
                     android:text="Sol Kanat"
                     android:visibility="gone"/>
 
-                <!-- Ofansif Orta Saha -->
+
                 <Button
                     android:id="@+id/attacking_mid1"
                     style="@style/PlayerSelectionButton"
@@ -92,7 +92,7 @@
                     android:visibility="gone"/>
             </LinearLayout>
 
-            <!-- Merkez orta saha sırası -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -113,7 +113,7 @@
                     android:text="MOS"/>
             </LinearLayout>
 
-            <!-- Defansif orta saha sırası -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -137,7 +137,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Defans hattı -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -184,7 +184,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Kaleci -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -198,7 +198,7 @@
                 android:text="Kaleci"/>
         </LinearLayout>
 
-        <!-- Diziliş seçici spinner -->
+
         <Spinner
             android:id="@+id/formationSpinner"
             android:layout_width="match_parent"
@@ -206,7 +206,7 @@
             android:layout_margin="16dp"
             android:background="@drawable/spinner_background"/>
 
-        <!-- Teknik Direktör seçimi -->
+
         <Button
             android:id="@+id/coachButton"
             android:layout_width="match_parent"
@@ -215,7 +215,7 @@
             android:text="Teknik Direktör Seç"
             android:background="@drawable/button_background"/>
 
-        <!-- Kaydet butonu -->
+
         <Button
             android:id="@+id/saveTeamButton"
             android:layout_width="match_parent"

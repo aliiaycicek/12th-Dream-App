@@ -8,7 +8,7 @@ public class Team {
     private String name;
     private List<Player> players;
 
-    // Firebase için boş constructor
+    // Firebas boş constructor
     public Team() {}
 
     public Team(String name) {

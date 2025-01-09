@@ -9,10 +9,10 @@ public class DreamTeamApplication extends Application {
     public void onCreate() {
         super.onCreate();
         
-        // Firebase offline capabilities
+
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         
-        // Firebase'i başlat ve örnek verileri ekle
+
         Log.d("DreamTeamApplication", "Firebase başlatılıyor...");
         FirebaseManager.initializeDatabase();
     }
